@@ -1,7 +1,118 @@
 body {
-text-align:center;
-padding-top:120px;
+	background: #fff;
+	color: #383a3c;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 1.25;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+    text-align: center;
 }
+
 canvas {
 	border:1px solid #000000;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    display: block;
+}
+
+
+#vie{
+	font-family:"Times New Roman", Times, serif;
+	font-size:40px;
+	position: absolute;
+	top : 50px;
+	left : 50px;
+}
+#score{
+	font-family:"Times New Roman", Times, serif;
+	font-size:40px;
+	position: absolute;
+	top : 150px;
+	left : 50px;
+}
+#temps{
+	font-family:"Times New Roman", Times, serif;
+	font-size:40px;
+	position: absolute;
+	top : 350px;
+	left : 50px;
+}
+#piege{
+	font-family:"Times New Roman", Times, serif;
+	font-size:40px;
+	position: absolute;
+	top : 250px;
+	left : 50px;
+}
+
+}
+.menu {
+	padding-top: 1em;
+	font-size: 0.8em;
+    text-align:center;
+}
+
+.menu a {
+	display: inline-block;
+	margin: 0.35em 0.1em;
+	padding: 0.5em 1.2em;
+	outline: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	border-radius: 2px;
+	font-size: 110%;
+	border: 2px solid transparent;
+    
+}
+
+.menu a:hover,
+.menu a.page {
+	border-color: #383a3c;
+}
+.menu a:hover,
+.menu a.page {
+	color: inherit;
+	border-color: initial;
+}
+
+a:link {
+    color: black;
+}
+a:visited{
+    color: black;
+}
+
+.btn {
+  background: #34d981;
+  background-image: -webkit-linear-gradient(top, #34d981, #2bb86d);
+  background-image: -moz-linear-gradient(top, #34d981, #2bb86d);
+  background-image: -ms-linear-gradient(top, #34d981, #2bb86d);
+  background-image: -o-linear-gradient(top, #34d981, #2bb86d);
+  background-image: linear-gradient(to bottom, #34d981, #2bb86d);
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  text-decoration: none;
+    
+
+}
+
+.btn:hover {
+  background: #7bfa3c;
+  background-image: -webkit-linear-gradient(top, #7bfa3c, #4fd934);
+  background-image: -moz-linear-gradient(top, #7bfa3c, #4fd934);
+  background-image: -ms-linear-gradient(top, #7bfa3c, #4fd934);
+  background-image: -o-linear-gradient(top, #7bfa3c, #4fd934);
+  background-image: linear-gradient(to bottom, #7bfa3c, #4fd934);
+  text-decoration: none;
 }
