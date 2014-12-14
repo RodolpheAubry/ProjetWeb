@@ -20,6 +20,10 @@ var cent = 0;
 var sec = 0;
 var min = 0;
 var imageObj = new Image();
+var imageObj2 = new Image();
+var imageObj3 = new Image();
+var imageObj4 = new Image();
+var imageObj5 = new Image();
 
 
 var alert1 = document.getElementById("vie");
@@ -72,32 +76,12 @@ function reinitialise(){
 }
 
 function commencer(){
-	var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-    // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
-	var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-	var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-    // At least Safari 3+: "[object HTMLElementConstructor]"
-	var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
-	var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
-	if (isFirefox==true)
-	{
-		clearInterval(gameloop);
-		gameloop = setInterval(update, 10);
-		gameloop2 = setInterval(placerHamster, 10);
 
-	}
-	if(isIE==true)
-	{
-		clearInterval(gameloop);
-		gameloop = setInterval(update, 0.01);
-		gameloop2 = setInterval(placerHamster, 0.01);
-	}
-	if(isChrome==true)
-	{
-		clearInterval(gameloop);
-		gameloop = setInterval(update, 10);
-		gameloop2 = setInterval(placerHamster, 10);
-	}
+
+	clearInterval(gameloop);
+	gameloop = setInterval(update, 10);
+	gameloop2 = setInterval(placerHamster, 10);
+	
 
 
 }
@@ -162,29 +146,21 @@ function update(){
 function drawCookie(xPos, yPos, test, taille){
 
 	if(test == 0){
-		imageObj.src = 'img/cookie.png';
-			context.beginPath();
-			context.drawImage(imageObj,xPos,yPos, taille, taille);
-			context.closePath();
-		
-		
+		imageObj3.src = 'img/cookie.png';
+			context.drawImage(imageObj3,xPos,yPos, taille, taille);
 	}
 	
 	if(test == 1){
-		imageObj.src = 'img/trap.jpg';
-		
-			context.beginPath();
-			context.drawImage(imageObj,xPos,yPos, taille, taille);
-			context.closePath();
+		imageObj4.src = 'img/trap.jpg';
+		context.drawImage(imageObj4,xPos,yPos, taille, taille);
+			
 		
 	}
 	
 	if(test == 2){
-		imageObj.src = 'img/cookie.png';
-		
-			context.beginPath();
-			context.drawImage(imageObj,xPos,yPos, taille, taille);
-			context.closePath();
+		imageObj5.src = 'img/cookie.png';
+		context.drawImage(imageObj5,xPos,yPos, taille, taille);
+
 		
 	}
 }
@@ -198,15 +174,21 @@ function collision(objet){
 	if (objet.cookieOuPiege == 0){
 		score++;
 		alert2.innerHTML = "SCORE : "+score;
+		var audio = new Audio('cookie.mp3');
+		audio.play();
 	}
 	if (objet.cookieOuPiege == 1){
+		var audio2 = new Audio('tapette.mp3');
+		audio2.play();
 		vie--;
 		alert1.innerHTML = "VIES : "+vie;
 		clearTimeout(compte);
+		
 		if (vie == 0){
 
 			//alert("GAME OVER \n Tu as joué pendant " + min + " minutes " + sec + " secondes et " + cent + " centièmes");
-			
+			var audio2 = new Audio('tapette.mp3');
+			audio2.play();
 			var classement = getCookie("highscore");
 			var nomJoueur = getCookie("joueur");
 			if (classement != "")
@@ -240,13 +222,15 @@ function collision(objet){
 
 			}
 
-			reinitialise();
+		reinitialise();
 		}
 		reset();
 	}
 	if (objet.cookieOuPiege == 2){
 		vie++;
 		alert1.innerHTML = "VIES : "+vie;
+        score=score+5
+        alert2.innerHTML = "SCORE : "+score;
 	
 	}
 
@@ -257,9 +241,8 @@ function collision(objet){
 function placerHamster(){
 	
 	init();
-	var imageObj = new Image();
-	imageObj.src = 'img/hamster.png';
-	context.drawImage(imageObj,x,y,tailleHamster,tailleHamster);
+	imageObj2.src = 'img/hamster.png';
+	context.drawImage(imageObj2,x,y,tailleHamster,tailleHamster);
 	
 
 	window.addEventListener('keydown',deplacerHamster,true);
