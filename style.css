@@ -21,7 +21,11 @@ canvas {
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
+<<<<<<< HEAD
     margin-top: auto;
+=======
+    margin-top: 3.5%;
+>>>>>>> origin/master
     display: block;
 }
 
@@ -30,24 +34,37 @@ canvas {
 	font-size:40px;
 	position: absolute;
 	top : 13%;
+<<<<<<< HEAD
 	left : 1.2%;
+=======
+	left : 2%;
+>>>>>>> origin/master
 }
 #score{
 	font-size:40px;
 	position: absolute;
 	top : 26%;
+<<<<<<< HEAD
 	left : 1.2%;
+=======
+	left : 2%;
+>>>>>>> origin/master
 }
 #temps{
 	font-size:40px;
 	position: absolute;
 	top : 39%;
+<<<<<<< HEAD
 	left : 1.2%;
+=======
+	left : 2%;
+>>>>>>> origin/master
 }
 #piege{
 	font-size:40px;
 	position: absolute;
 	top : 52%;
+<<<<<<< HEAD
 	left : 1.2%;
 }
 #grandcookie{
@@ -56,6 +73,11 @@ canvas {
 	top : 65%;
 	left : 1.2%;
 }
+=======
+	left : 2%;
+}
+
+>>>>>>> origin/master
 }
 .menu {
 	padding-top: 1em;

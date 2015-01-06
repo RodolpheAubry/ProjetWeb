@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //ensemble des variables nécessaires au fonctionnement du jeu
+=======
+>>>>>>> origin/master
 var widthCanvas = 500;
 var heightCanvas = 500;
 var mouvement = 100;
@@ -11,23 +14,34 @@ var tailleGrosCookie = 70;
 var gameloop;
 var refresh = 10;
 var cookieOuPiege = 0;
+<<<<<<< HEAD
+=======
+var canvas = document.getElementById("canvas");
+>>>>>>> origin/master
 var nbre = 0;
 var modulo = 70;
 var vie = 2;
 var score = 0;
 var piegeEvite = 0;
+<<<<<<< HEAD
 var grandCookie = 0;
 var cent = 0;
 var sec = 0;
 var min = 0;
 var modeDeJeu = 0;
 CookiesArray = new Array();
+=======
+var cent = 0;
+var sec = 0;
+var min = 0;
+>>>>>>> origin/master
 var imageObj = new Image();
 var imageObj2 = new Image();
 var imageObj3 = new Image();
 var imageObj4 = new Image();
 var imageObj5 = new Image();
 
+<<<<<<< HEAD
 //affichage des champs vues, score, temps, pieges, nombres de grands cookies
 var alert1 = document.getElementById("vie");
 alert1.innerHTML = "VIES : "+vie;
@@ -41,11 +55,29 @@ var alert5 = document.getElementById("grandcookie");
 alert5.innerHTML = "GRANDS COOKIES : "+grandCookie;
 
 var canvas = document.getElementById("canvas");
+=======
+
+var alert1 = document.getElementById("vie");
+alert1.innerHTML = "VIES : "+vie;
+
+var alert2 = document.getElementById("score");
+alert2.innerHTML = "SCORE : "+score;
+
+var alert3 = document.getElementById("temps");
+alert3.innerHTML = + min + " : " + sec + " : " + cent;
+
+var alert4 = document.getElementById("piege");
+alert4.innerHTML = "PIEGES EVITES : "+piegeEvite;
+
+CookiesArray = new Array();
+
+>>>>>>> origin/master
 canvas.width = widthCanvas;
 canvas.height = heightCanvas;
 context = canvas.getContext("2d");
 context.fillStyle = "white"
 
+<<<<<<< HEAD
 window.addEventListener('keydown',pause,true);
 window.addEventListener('keydown',triche,true);
 
@@ -77,6 +109,9 @@ function triche(e){
 	}
 }
 //fonction chrono pour déterminer le temps de jeu
+=======
+
+>>>>>>> origin/master
 function chrono(){
 	cent++;
 	if (cent>99){
@@ -92,7 +127,11 @@ function chrono(){
 	
 	compte=setTimeout('chrono()',10);
 }
+<<<<<<< HEAD
 //fonction reinitialise permet de tout remettre à 0 lorsque le nombre de vie tombe à 0
+=======
+
+>>>>>>> origin/master
 function reinitialise(){
 	
 	vie=2;
@@ -105,8 +144,12 @@ function reinitialise(){
 	min=0;
 	alert3.innerHTML = + min + " : " + sec + " : " + cent;
 }
+<<<<<<< HEAD
 //fonction qui s'exécute lorsqu'on clique sur le bouton commencer
 //raffraichissement toutes les 10 ms de l'affichage des cookies et hamster
+=======
+
+>>>>>>> origin/master
 function commencer(){
 
 
@@ -117,7 +160,11 @@ function commencer(){
 
 
 }
+<<<<<<< HEAD
 //fonction pour mettre à jour la position des images
+=======
+
+>>>>>>> origin/master
 function update(){
 
 	context.fillRect(0, 0, canvas.width, canvas.height);	
@@ -125,6 +172,7 @@ function update(){
 	if (nbre % modulo==0){
 
 		var newObjet = new Object();
+<<<<<<< HEAD
 		if(modeDeJeu==0){
 			var aleatoire = Math.random();
 		}
@@ -135,6 +183,9 @@ function update(){
 			var aleatoire =0.5;
 		}
 			
+=======
+		var aleatoire = Math.random();
+>>>>>>> origin/master
 
 		if (aleatoire < 0.48){
 			newObjet.x = (Math.floor (Math.random() *5)*100+35);
@@ -159,7 +210,11 @@ function update(){
 		CookiesArray.push(newObjet);
 
 	}
+<<<<<<< HEAD
 //parcours de la collection d'objets (tableau CookiesArray)
+=======
+
+>>>>>>> origin/master
 	for (var i=CookiesArray.length - 1; i >= 0; i--){
 
 		CookiesArray [i].y++;
@@ -171,7 +226,10 @@ function update(){
 			else{
 				if (CookiesArray[i].cookieOuPiege == 1){
 					piegeEvite++;
+<<<<<<< HEAD
 					score++;
+=======
+>>>>>>> origin/master
 				}
 			}
 			CookiesArray.splice(i, 1);
@@ -182,12 +240,18 @@ function update(){
 	}
 	var alert4 = document.getElementById("piege");
 	alert4.innerHTML = "PIEGES EVITES : "+piegeEvite;
+<<<<<<< HEAD
 	var alert2 = document.getElementById("score");
 	alert2.innerHTML = "SCORE : "+score;
 
 	nbre++;
 }
 //fonction qui permet de dessiner les images selon 3 cas : cookie,piege,gros cookies
+=======
+	nbre++;
+}
+
+>>>>>>> origin/master
 function drawCookie(xPos, yPos, test, taille){
 
 	if(test == 0){
@@ -214,27 +278,46 @@ function reset(){
 	clearInterval(gameloop);
 	clearInterval(gameloop2);
 }
+<<<<<<< HEAD
 //fonction qui gère les différentes collisions entre les objets et le hamster
 //changement de style selon les cas
+=======
+
+>>>>>>> origin/master
 function collision(objet){
 	if (objet.cookieOuPiege == 0){
 		score++;
 		alert2.innerHTML = "SCORE : "+score;
+<<<<<<< HEAD
 		alert1.style.color="#383a3c";
 		alert2.style.color="green";
 		var audio = new Audio('cookie.mp3');
 		audio.play();
 	}
 	else if (objet.cookieOuPiege == 1){
+=======
+		var audio = new Audio('cookie.mp3');
+		audio.play();
+	}
+	if (objet.cookieOuPiege == 1){
+>>>>>>> origin/master
 		var audio2 = new Audio('tapette.mp3');
 		audio2.play();
 		vie--;
 		alert1.innerHTML = "VIES : "+vie;
+<<<<<<< HEAD
 		alert1.style.color="red";
 		alert2.style.color="#383a3c";
 		clearTimeout(compte);
 		
 		if (vie == 0){
+=======
+		clearTimeout(compte);
+		
+		if (vie == 0){
+
+			//alert("GAME OVER \n Tu as jouÃ© pendant " + min + " minutes " + sec + " secondes et " + cent + " centiÃ¨mes");
+>>>>>>> origin/master
 			var audio2 = new Audio('tapette.mp3');
 			audio2.play();
 			var classement = getCookie("highscore");
@@ -245,7 +328,11 @@ function collision(objet){
 				if (score > classement)
 					{
 						setCookie("highscore", score, 30);
+<<<<<<< HEAD
 						var nomJoueur = prompt("Félicitation vous avez réalisé un meilleur score! Entrez votre nom","")
+=======
+						var nomJoueur = prompt("FÃ©licitation vous avez rÃ©alisÃ© un meilleur score! Entrez votre nom","")
+>>>>>>> origin/master
 						setCookie("joueur", nomJoueur, 30);
 						classement=getCookie("highscore");
 						alert("Meilleur score : " + classement + " Joueur " + nomJoueur);
@@ -255,7 +342,11 @@ function collision(objet){
 				else
 				{
 	
+<<<<<<< HEAD
 					alert("Dommage vous ferez mieux la prochaine fois! Record détenu par " + nomJoueur + " à " + classement + " points");
+=======
+					alert("Dommage vous ferez mieux la prochaine fois! Record dÃ©tenu par " + nomJoueur + " Ã  " + classement + " points");
+>>>>>>> origin/master
 					reinitialise();
 				}
 			}
@@ -263,15 +354,26 @@ function collision(objet){
 			{	
 				setCookie("highscore", score, 30);
 				var classement = getCookie("highscore");
+<<<<<<< HEAD
 				var nomJoueur = prompt("Félicitation vous avez réalisé votre premier meilleur score! Entrez votre nom","")
 				setCookie("joueur", nomJoueur, 30);
 				alert("Félicitation votre premier meilleur score! : " + classement + " Joueur " + nomJoueur);
 				reinitialise();
 			}
+=======
+				var nomJoueur = prompt("FÃ©licitation vous avez rÃ©alisÃ© votre premier meilleur score! Entrez votre nom","")
+				setCookie("joueur", nomJoueur, 30);
+				alert("FÃ©licitation votre premier meilleur score! : " + classement + " Joueur " + nomJoueur);
+				reinitialise();
+
+			}
+
+>>>>>>> origin/master
 		reinitialise();
 		}
 		reset();
 	}
+<<<<<<< HEAD
 	else 
 	{
 		var audio3 = new Audio('groscookie.mp3');
@@ -285,6 +387,20 @@ function collision(objet){
 	}
 }
 //fonction qui place le hamster au centre du canvas au moment du lancement       
+=======
+	if (objet.cookieOuPiege == 2){
+		vie++;
+		alert1.innerHTML = "VIES : "+vie;
+        score=score+5
+        alert2.innerHTML = "SCORE : "+score;
+	
+	}
+
+	
+}
+
+        
+>>>>>>> origin/master
 function placerHamster(){
 	
 	init();
@@ -294,7 +410,11 @@ function placerHamster(){
 
 	window.addEventListener('keydown',deplacerHamster,true);
 }
+<<<<<<< HEAD
 //fonction qui permet le déplacement du hamster selon la touche pressée (gauche ou droite)
+=======
+
+>>>>>>> origin/master
 function deplacerHamster(e){
 
 	switch (e.keyCode) {
@@ -331,14 +451,21 @@ function clear(){
 	context.clearRect(0, 0, widthCanvas, heightCanvas);
 
 }
+<<<<<<< HEAD
 //fonction qui crée un cookie avec en paramètre le nom, la valeur et la date d'expiration
+=======
+>>>>>>> origin/master
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname+"="+cvalue+"; "+expires;
 }
+<<<<<<< HEAD
 //fonction qui récupère la valeur d'un cookie avec en paramètre le nom
+=======
+        
+>>>>>>> origin/master
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
